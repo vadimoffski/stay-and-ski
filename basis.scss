@@ -1,0 +1,226 @@
+@import 'reset';
+@import url(https://fonts.googleapis.com/css?family=Mulish:200,300,regular,500,600,700,800,900,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+@import url(https://fonts.googleapis.com/css?family=Catamaran:100,200,300,regular,500,600,700,800,900);
+
+$mulish: 'Mulish';
+$catamaran: 'Catamaran';
+
+$media_queries : (
+    'mobile': "only screen and (max-width: 767px)",
+    'tablet': "screen and (min-width: 768px)",
+    'laptop': "screen and (min-width: 992px)",
+    'desktop': "screen and (min-width: 1200px)"
+);
+
+@mixin for_breakpoint($breakpoints) {
+    $conditions : ();
+    @each $breakpoint in $breakpoints {
+        $conditions: append(
+            $conditions,
+            #{inspect(map-get($media_queries, $breakpoint))},
+            comma
+        );
+    }
+    @media #{$conditions} {
+        @content;
+    }
+}
+
+@mixin columns($n) {
+    flex: 0 0 bootstrap($n);
+    max-width: bootstrap($n);
+    padding: 0 15px;
+}
+
+@function bootstrap($n){
+    @return $n*100%/12;
+}
+*{
+    box-sizing: border-box;
+}
+.container{
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+    overflow-x: hidden;
+    @include for_breakpoint(tablet){
+            max-width: 720px;
+    }
+    @include for_breakpoint(laptop){
+            max-width: 960px;
+    }
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 -15px;
+}
+
+.header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.logo{
+    @include columns(4);
+}
+
+.nav{
+    @include columns(8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__link{
+        text-decoration: none;
+        color: white;
+        font-family: $mulish;
+        font-weight: bold;
+        padding: 10px 0 0 0;
+        border-radius: 5px 5px 0px 0px;
+        position: relative;
+        &::before, &::after{
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background: rgb(255, 105, 15);
+            border-radius: 5px 5px 0 0;
+			transform-origin: right;
+			transition: transform 400ms ease;
+			z-index: -1;
+			transform: scaleX(0);
+		}
+        &::before, &::after{
+            transform: scaleY(0);
+            transform-origin: bottom;
+
+        }
+        &:hover::before, &:hover::after{
+            transform: scaleY(1);
+            transform-origin: bottom;
+        }
+    }
+}
+
+.paralax{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: contain;
+    overflow-y: hidden;
+    &__h2{
+        font-family: $catamaran;
+        position: absolute;
+        top: 40px;
+        font-size: 20px;
+        font-weight: 900;
+        text-transform: uppercase;
+        text-align: center;
+        color: rgb(102, 172, 206);
+    }
+    &__big{
+        font-size: 125px;
+    }
+    &__img-bg{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    &__img-mountains{
+        position: absolute;
+        bottom: -150px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        object-fit: contain;
+    }
+    &__img-heel{
+        position: absolute;
+        bottom: -250px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        object-fit: contain;
+    }
+    &__img-boarder{
+        position: absolute;
+        bottom: -50px;
+        right: 0px;
+        width: 50%;
+        height: 50%;
+        pointer-events: none;
+        object-fit: contain;
+    }
+}
+
+.online-booking{
+    @include columns(5);
+    position: absolute;
+    top: 400px;
+    left: 150px;
+    &__button{
+        width: 200px;
+        height: 50px;
+        background-color: rgb(255, 105, 15);
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        color: white;
+        font-size: 20px;
+        text-transform: uppercase;
+        &:hover{
+            background-color: transparent;
+            border: 2px solid rgb(255, 105, 15);
+        }
+    }
+    &__text{
+        color: white;
+        font-family: $mulish;
+        line-height: 20px;
+        text-align: left;
+        margin-bottom: 20px;
+    }
+}
+
+.offer-title{
+    @include columns(12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__title {
+    color: black;
+    font-size: 60px;
+    font-family: $catamaran;
+    font-weight: 900;
+    }
+    &__title-description{
+    text-align: center;
+    font-family: $mulish;
+    font-weight: 200;
+    align-self: center;
+    }
+}
+
+
+
+
+
+
+
