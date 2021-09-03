@@ -59,7 +59,6 @@ table {
   padding-left: 15px;
   padding-right: 15px;
   margin: 0 auto;
-  overflow-x: hidden;
 }
 
 @media screen and (min-width: 768px) {
@@ -92,6 +91,10 @@ table {
   left: 0;
   width: 100%;
   z-index: 100;
+}
+
+.x-hidden {
+  overflow: hidden;
 }
 
 .logo {
@@ -276,7 +279,18 @@ table {
   margin-bottom: 20px;
 }
 
-.offer-title {
+.title {
+  font-family: "Catamaran";
+  font-weight: 900;
+  font-size: 60px;
+}
+
+.title__deskription {
+  font-family: "Mulish";
+  font-weight: 300;
+}
+
+.offer {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 100%;
           flex: 0 0 100%;
@@ -292,21 +306,205 @@ table {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.offer-title__title {
-  color: black;
-  font-size: 60px;
-  font-family: "Catamaran";
-  font-weight: 900;
+.offer__title {
+  margin: 80px 0 50px 0;
 }
 
-.offer-title__title-description {
+.offer__title-deskription {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 83.33333%;
+          flex: 0 0 83.33333%;
+  max-width: 83.33333%;
+  padding: 0 15px;
   text-align: center;
+  margin-bottom: 60px;
+}
+
+.text-1 {
   font-family: "Mulish";
-  font-weight: 200;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  font-size: 14px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.text-2 {
+  font-family: "Catamaran";
+  font-size: 24px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.offer-items {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  max-width: 100%;
+  padding: 0 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 60px;
+}
+
+.offer-items__item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 33.33333%;
+          flex: 0 0 33.33333%;
+  max-width: 33.33333%;
+  padding: 0 15px;
+  text-align: center;
+}
+
+.offer-items__item-img {
+  height: 150px;
+}
+
+.offer-items__item-text1 {
+  margin: 40px 0 20px 0;
+}
+
+.offer-items__item-button {
+  width: 120px;
+  height: 45px;
+  background-color: #ff690f;
+  border: none;
+  border-radius: 10px;
+  margin-top: 30px;
+  cursor: pointer;
+  color: white;
+}
+
+.offer-items__item-button:hover {
+  border: 2px solid #ff690f;
+  background-color: transparent;
+  color: black;
+}
+
+.photo-wrapper {
+  padding: 20px;
+  margin-bottom: 60px;
+}
+
+.photo-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  display: inline-block;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 32%;
+          flex: 0 0 32%;
+  max-width: 32%;
+}
+
+.photo-item__img {
+  width: 100%;
+}
+
+.teem__title {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  max-width: 100%;
+  padding: 0 15px;
+  text-align: center;
+  margin: 60px 0;
+}
+
+.teem-items {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  max-width: 100%;
+  padding: 0 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.teem-items__item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 25%;
+          flex: 0 0 25%;
+  max-width: 25%;
+  padding: 0 15px;
+}
+
+.teem-items__item-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.teem-items__item-text1 {
+  margin: 15px 0;
+}
+
+.teem-items__item-text2 {
+  margin-bottom: 150px;
+}
+
+.school-wrapper {
+  background: url(./img/block5/bg.png) no-repeat 100% 50%;
+  background-size: cover;
+  padding: 100px 20px;
+}
+
+.school__title {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+  max-width: 50%;
+  padding: 0 15px;
+  margin-bottom: 20px;
+}
+
+.school__text-1 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 58.33333%;
+          flex: 0 0 58.33333%;
+  max-width: 58.33333%;
+  padding: 0 15px;
+  margin-bottom: 20px;
+}
+
+.number-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 66.66667%;
+          flex: 0 0 66.66667%;
+  max-width: 66.66667%;
+  padding: 0 15px;
+}
+
+.item {
+  text-align: center;
+}
+
+.item__number {
+  color: #ff690f;
+  font-family: "Catamaran";
+  font-size: 35px;
+  font-weight: 900;
 }
 /*# sourceMappingURL=basis.css.map */
