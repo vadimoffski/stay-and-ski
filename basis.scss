@@ -343,6 +343,105 @@ $media_queries : (
     }
 }
 
+.reviews{
+    @include columns(10);
+    margin: 0 auto;
+    &__title{
+        text-align: center;
+        text-transform: uppercase;
+        margin-top: 150px;
+        margin-bottom: 50px;
+    }
+    &__slider{
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    &__slider-item{
+    }
+    &__slider-img{
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+    &__slider-text{
+        width: 300px;
+        margin: 0 auto;
+        margin-bottom: 30px;
+    }
+}
+
+.contact-us{
+    font-family: $catamaran;
+    &__title{
+        margin: 50px 0;
+    }
+    &__telnum{
+        padding-left: 30px;
+        margin-bottom: 20px;
+        position: relative;
+        &::before{
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: 0;
+            background: url(./img/contact-us/ic-1.svg) no-repeat 100% 100%;
+            width: 20px;
+            height: 20px;
+        }
+    }
+    &__location{
+        padding-left: 30px;
+        margin-bottom: 20px;
+        position: relative;
+        &::before{
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: -2px;
+            background: url(./img/contact-us/ic-2.svg) no-repeat 100% 100%;
+            width: 20px;
+            height: 20px;
+        }
+    }
+    &__email{
+        padding-left: 30px;
+        margin-bottom: 20px;
+        position: relative;
+        &::before{
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: 0;
+            background: url(./img/contact-us/ic-3.svg) no-repeat 100% 100%;
+            width: 20px;
+            height: 20px;
+        }
+    }
+    &__time{
+        padding-left: 30px;
+        margin-bottom: 50px;
+        position: relative;
+        &::before{
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: 0;
+            background: url(./img/contact-us/ic-4.svg) no-repeat 100% 100%;
+            width: 20px;
+            height: 20px;
+        }
+    }
+    &__link{
+        display: flex;
+        justify-content: space-between;
+        width: 150px;
+    }
+    &__link-img{
+        background-color: rgb(255, 105, 15);
+        border-radius: 2px;
+        width: 30px;
+        height: 30px;
+    }
+}
 
 
 

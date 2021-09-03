@@ -507,4 +507,125 @@ table {
   font-size: 35px;
   font-weight: 900;
 }
+
+.reviews {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 83.33333%;
+          flex: 0 0 83.33333%;
+  max-width: 83.33333%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.reviews__title {
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 150px;
+  margin-bottom: 50px;
+}
+
+.reviews__slider {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.reviews__slider-img {
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.reviews__slider-text {
+  width: 300px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.contact-us {
+  font-family: "Catamaran";
+}
+
+.contact-us__title {
+  margin: 50px 0;
+}
+
+.contact-us__telnum {
+  padding-left: 30px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.contact-us__telnum::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 0;
+  background: url(./img/contact-us/ic-1.svg) no-repeat 100% 100%;
+  width: 20px;
+  height: 20px;
+}
+
+.contact-us__location {
+  padding-left: 30px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.contact-us__location::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -2px;
+  background: url(./img/contact-us/ic-2.svg) no-repeat 100% 100%;
+  width: 20px;
+  height: 20px;
+}
+
+.contact-us__email {
+  padding-left: 30px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.contact-us__email::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 0;
+  background: url(./img/contact-us/ic-3.svg) no-repeat 100% 100%;
+  width: 20px;
+  height: 20px;
+}
+
+.contact-us__time {
+  padding-left: 30px;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.contact-us__time::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 0;
+  background: url(./img/contact-us/ic-4.svg) no-repeat 100% 100%;
+  width: 20px;
+  height: 20px;
+}
+
+.contact-us__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 150px;
+}
+
+.contact-us__link-img {
+  background-color: #ff690f;
+  border-radius: 2px;
+  width: 30px;
+  height: 30px;
+}
 /*# sourceMappingURL=basis.css.map */
