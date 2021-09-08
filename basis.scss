@@ -138,7 +138,6 @@ body{
 .page{
     flex: 1 1 auto;
 }
-.page__main-block{}
 .main-block {
     position: relative;
     &__body {
@@ -194,10 +193,6 @@ body{
             border: 2px solid rgb(255, 105, 15);
         }
     }
-    &__buttons {
-        
-    }
-    &__container {}
     &__paralax {
         position: absolute;
         width: 100%;
@@ -281,181 +276,288 @@ body{
         }
     }
 }
-
-// ________________________________________FOOTER______________________________________
-.footer{
-
+// ________________________________________HEADER-BLOCK______________________________
+.page__padding{
+    padding: 80px 0;
 }
-
-
-
-
-
-
-.online-booking{
-    @include columns(5);
-    position: absolute;
-    top: 400px;
-    left: 150px;
-    &__button{
-        width: 200px;
-        height: 50px;
-        background-color: rgb(255, 105, 15);
-        border: none;
-        border-radius: 10px;
-        cursor: pointer;
-        color: white;
-        font-size: 20px;
-        text-transform: uppercase;
-        &:hover{
-            background-color: transparent;
-            border: 2px solid rgb(255, 105, 15);
+.header-block{
+    text-align: center;
+    &__title{
+        font-family: $catamaran;
+        font-size: 60px;
+        line-height: calc(90/60*100%);
+        font-weight: 900;
+        color: #333;
+        letter-spacing: 1px;
+        &:not(:last-child){
+            margin: 0 0 10px 0;
+        }
+        @include for_breakpoint('mobile'){
+            font-size: 30px;
         }
     }
-    &__text{
-        color: white;
-        font-family: $mulish;
-        line-height: 20px;
-        text-align: left;
-        margin-bottom: 20px;
+    &__sub-title{
+        font-size: 18px;
+        line-height: calc(32/18*100%);
+        font-weight: 300;
+        @include for_breakpoint('mobile'){
+            font-size: 14px;
+            line-height: calc(25/14*100%);
+        }
     }
 }
-
-.title{
-    font-family: $catamaran;
-    font-weight: 900;
-    font-size: 60px;
-}
-.title__deskription{
-    font-family: $mulish;
-    font-weight: 300;
-}
-.offer {
-    @include columns(12);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    &__title {
-        margin: 80px 0 50px 0;      
+// ________________________________________SERVICES_________________________________
+.services {
+    &__header {
+        margin: 0 0 50px 0;
     }
-
-    &__title-deskription {
-        @include columns(10);
-        text-align: center;
-        margin-bottom: 60px;
+    &__body {
+        display: flex;
+        margin: 0 -15px;
+        @include for_breakpoint('mobile'){
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
     }
-}
-
-.text-1{
-    font-family: $mulish;
-    font-size: 14px;
-    font-weight: 300;
-    text-transform: uppercase;
-}
-.text-2{
-    font-family: $catamaran;
-    font-size: 24px;
-    font-weight: 900;
-    text-transform: uppercase;
-}
-.offer-items {
-    @include columns(12);
-    display: flex;
-    margin-bottom: 60px;
+     &__column {
+        padding: 0 15px;
+        flex: 0 1 33.333%;
+        @include for_breakpoint('mobile'){
+            flex: 0 1 100%;
+        }
+    }
     &__item {
-        @include columns(4);
-        text-align: center;
+        height: 100%;
+        box-shadow: 0px 13px 19px rgba(0,0,0, 0.07);
+        background-color: #fff;
+        padding: 35px;
+    } 
+}
+.item-service{
+    text-align: center;
+    &>*:not(:last-child){
+        margin: 0 0 10px 0;
     }
-    &__item-img{
-        height: 150px;
+    &__icon img{
+        max-width: 100%;
+        max-height: 150px;
     }
-    &__item-text1{
-        margin: 40px 0 20px 0;
+    &__title{
+        line-height: calc(50/14*100%);
+        font-weight: 300;
     }
-    &__item-button{
-        width: 120px;
-        height: 45px;
+    &__text{
+        font-size: 24px;
+        color: #333333;
+        font-weight: 900;
+        font-family: $catamaran;
+    }
+    &__btn{
         background-color: rgb(255, 105, 15);
-        border: none;
+        border: 2px solid rgb(255, 105, 15);
         border-radius: 10px;
-        margin-top: 30px;
+        padding: 10px;
         cursor: pointer;
         color: white;
+        @include for_breakpoint('mobile'){
+            padding: 10px 20px;
+        }
         &:hover{
             border: 2px solid rgb(255, 105, 15);
             background-color: transparent;
             color: black;
         }
     }
-}
 
-.photo-wrapper{
-    padding: 20px;
-    margin-bottom: 60px;
 }
-.photo-item{
-    display: flex;
-    flex-flow: row wrap;
-    display: inline-block;
-    flex: 0 0 32%;
-    max-width: 32%;
-    &__img{
-        width: 100%;
+// ________________________________________OUR-PHOTOS__________________________________
+.our-photos{
+    padding: 100px 0 0px 0;
+    @include for_breakpoint('mobile'){
+        padding: 50px 0 0 0;
     }
 }
-
-
-.teem__title{
-    @include columns(12);
-    text-align: center;
-    margin: 60px 0;
+.our-photos__img img{
+    margin: 0 auto;
+    max-width: 100%;
 }
-.teem-items {
-    @include columns(12);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.slick-next, .slick-prev{
+    z-index: 1000;
+}
+.slick-prev {
+    left: 20px !important;
+    @include for_breakpoint('mobile'){
+        left: 15px !important;
+    }
+}
+.slick-next{
+    right: 60px !important;
+    @include for_breakpoint('mobile'){
+        right: 25px !important;
+    }
+}
+.slick-prev:before, .slick-next:before {
+    font-size: 60px  !important;
+    color: rgb(255, 0, 0) !important;
+    line-height: 0px !important;
+    @include for_breakpoint('mobile'){
+        font-size: 30px !important;
+        line-height: 30px !important;
+    }
+}
+.slick-dots {
+    bottom: 30px;
+    @include for_breakpoint('mobile'){
+        bottom: 10px !important;
+    }
+}
+.slick-dots li.slick-active button:before {
+    color: red !important;
+    opacity: 0.75;
+}
+.slick-dots li button:before {
+    font-size: 15px !important;
     text-align: center;
+    color: #fff;
+    opacity: 0.25;
+    @include for_breakpoint('mobile'){
+        font-size: 10px !important;
+    }
+}
+// ________________________________________TEAM______________________________________
+.team {
+    @include for_breakpoint('mobile'){
+        padding: 10px 0;
+    }
+    &__header {
+        margin: 0 0 50px 0;
+    }
+    &__body {
+        display: flex;
+        margin: 0 -15px;
+        @include for_breakpoint('mobile'){
+            flex-wrap: wrap;
+        }
+    }
+     &__column {
+        padding: 0 15px;
+        flex: 0 1 25%;
+        @include for_breakpoint('mobile'){
+            flex: 0 1 100%;
+        }
+    }
     &__item {
-        @include columns(3);
+        height: 100%;
+        box-shadow: 0px 13px 19px rgba(0,0,0, 0.07);
+        background-color: #fff;
+        padding: 35px;
     }
-    &__item-img {
-        width: 120px;
-        height: 120px;
+}
+.item-team{
+    text-align: center;
+    &>*:not(:last-child){
+        margin: 0 0 10px 0;
+    }
+    &__icon img{
+        max-width: 100%;
         border-radius: 50%;
+        @include for_breakpoint('mobile'){
+            height: 200px;
+        }
+        @include for_breakpoint('tablet'){
+            height: 100px;
+        }
     }
-    &__item-text1 {
-        margin: 15px 0;
+    &__title{
+        line-height: calc(50/14*100%);
+        font-weight: 300;
+        text-transform: uppercase;
     }
-    &__item-text2{
-        margin-bottom: 150px;
+    &__text{
+        font-size: 24px;
+        color: #333333;
+        font-weight: 900;
+        font-family: $catamaran;
     }
 }
-
-.school-wrapper{
-    display: none;
-    background: url(./img/block5/bg.png) no-repeat 100% 50%;
+// ________________________________________SCHOOL______________________________________
+.school-block{
+    text-align: left;
+    &__title{
+        font-family: $catamaran;
+        font-size: 60px;
+        line-height: calc(80/60*100%);
+        font-weight: 900;
+        color: #333;
+        letter-spacing: 1px;
+        &:not(:last-child){
+            margin: 0 0 10px 0;
+        }
+        @include for_breakpoint('mobile'){
+            font-size: 30px;
+            text-align: center;
+        }
+    }
+    &__sub-title{
+        width: 700px;
+        font-size: 18px;
+        line-height: calc(32/18*100%);
+        font-weight: 300;
+        @include for_breakpoint('mobile'){
+            font-size: 14px;
+            line-height: calc(25/14*100%);
+            font-weight: 500;
+            width: 100%;
+        }
+    }
+}
+.school{
+    padding: 80px 0;
+    margin-top: 10px;
+    background: url(img/school/bg.png) no-repeat;
+    background-position: top center;
     background-size: cover;
-    padding: 100px 20px;
+    position: relative;
+    z-index: 1;
+    @include for_breakpoint('mobile'){
+        background-position: right;
+    }
+    &:after{
+        content: "";
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        background-color: rgba(255, 255, 255, 0.7);
+        width: 100%;
+        height: 100%;
+        opacity: 0.7;
+        z-index: -1;
+    }
+    &__header {
+        margin: 0 0 50px 0;
+    }
 }
-
-.school__title{
-    @include columns(6);
-    margin-bottom: 20px;
-}
-.school__text-1{
-    @include columns(7);
-    margin-bottom: 20px;
-}
-
 .number-wrap{
     display: flex;
-    justify-content: space-between;
-    @include columns(8);
+    justify-content: flex-start;
+    @include for_breakpoint('mobile'){
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 .item{
     text-align: center;
+    @include for_breakpoint('tablet'){
+        &:not(:last-child){
+            margin: 0 20px 0 0;
+        }
+    }
+    &__text{
+        font-size: 18px;
+        letter-spacing: 1px;
+        font-weight: 900;
+    }
     &__number{
         color: rgb(255, 105, 15);
         font-family: $catamaran;
@@ -463,37 +565,55 @@ body{
         font-weight: 900;
     }
 }
-
+// ________________________________________REVIEWS_____________________________________
 .reviews{
-    @include columns(10);
-    margin: 0 auto;
-    &__title{
-        text-align: center;
-        text-transform: uppercase;
-        margin-top: 150px;
-        margin-bottom: 50px;
-    }
-    &__slider{
-        text-align: center;
-        margin-bottom: 50px;
-    }
-    &__slider-item{
-    }
-    &__slider-img{
-        margin: 0 auto;
-        margin-bottom: 20px;
-    }
-    &__slider-text{
-        width: 300px;
-        margin: 0 auto;
+    &__header{
         margin-bottom: 30px;
     }
 }
-
-.contact-us{
+.reviews-item{
+    &__img{
+        margin: 0 auto;
+        display: block;
+        margin-bottom: 20px;
+    }
+    &__name{
+        font-family: $catamaran;
+        font-size: 18px;
+        font-weight: 900;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    &__comment{
+        width: 50%;
+        margin: 0 auto;
+        text-align: center;
+    }
+}
+// ________________________________________FOOTER______________________________________
+.footer{
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    @include for_breakpoint('mobile'){
+        flex-direction: column;
+    }
+}
+.footer-container{
+    width: 100%;
+    padding: 20px 20px 10px 50px;
+    margin: 0px auto;
+    @include for_breakpoint('mobile'){
+        padding: 20px 15px 10px 15px;
+    }
+}
+.contact{
     font-family: $catamaran;
+    color: #fff;
     &__title{
-        margin: 50px 0;
+        font-size: 60px;
+        letter-spacing: 1px;
+        font-weight: 900;
     }
     &__telnum{
         padding-left: 30px;
@@ -502,9 +622,10 @@ body{
         &::before{
             content: "";
             position: absolute;
-            top: -5px;
+            top: 0;
             left: 0;
-            background: url(./img/contact-us/ic-1.svg) no-repeat 100% 100%;
+            background: url(./img/footer/contact/tel.png) no-repeat 100% 100%;
+            background-size: cover;
             width: 20px;
             height: 20px;
         }
@@ -516,9 +637,10 @@ body{
         &::before{
             content: "";
             position: absolute;
-            top: -5px;
-            left: -2px;
-            background: url(./img/contact-us/ic-2.svg) no-repeat 100% 100%;
+            top: 0;
+            left: 0;
+            background: url(./img/footer/contact/geo.png) no-repeat 100% 100%;
+            background-size: cover;
             width: 20px;
             height: 20px;
         }
@@ -530,9 +652,10 @@ body{
         &::before{
             content: "";
             position: absolute;
-            top: -5px;
+            top: 0;
             left: 0;
-            background: url(./img/contact-us/ic-3.svg) no-repeat 100% 100%;
+            background: url(./img/footer/contact/mail.png) no-repeat 100% 100%;
+            background-size: cover;
             width: 20px;
             height: 20px;
         }
@@ -544,22 +667,28 @@ body{
         &::before{
             content: "";
             position: absolute;
-            top: -5px;
+            top: 0;
             left: 0;
-            background: url(./img/contact-us/ic-4.svg) no-repeat 100% 100%;
+            background: url(./img/footer/contact/hours.png) no-repeat 100% 100%;
+            background-size: cover;
             width: 20px;
             height: 20px;
         }
     }
     &__link{
         display: flex;
-        justify-content: space-between;
-        width: 150px;
+        &>*:not(:last-child){
+            margin: 0 20px 0 0;
+        }
     }
     &__link-img{
         background-color: rgb(255, 105, 15);
         border-radius: 2px;
-        width: 30px;
-        height: 30px;
+    }
+}
+.map{
+    width: 100%;
+    @include for_breakpoint('mobile'){
+        height: 300px;
     }
 }

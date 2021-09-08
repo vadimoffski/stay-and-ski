@@ -7,7 +7,7 @@ counters.forEach((counter)=> {
         let increment = target/2000;
         if ( c< target){
             counter.innerText = `${Math.ceil(c + increment)}`;
-            setTimeout( updateCounter, 1000);
+            setTimeout( updateCounter, 300);
         }
     };
     updateCounter();
