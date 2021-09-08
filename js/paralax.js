@@ -9,11 +9,10 @@ let header = document.querySelector('.header');
 window.addEventListener('scroll', function(){
     let value = window.scrollY;
     
-    // bg.style.top = value * -0.5 +'px';
-    title.style.top = 60 + value * 1 +'px';
-    mountains.style.top = 150 + value * 0.5 +'px';
-    header.style.top = value * 0.5 +'px';
-    boarder.style.right = value * 0.5 +'px';
+    title.style.top = 5 + value * 0.2 +'%';
+    mountains.style.top = value * 0.3 +'%';
+    header.style.top = value * -0.5 +'px';
+    boarder.style.right =value * 0.9 +'px';
 
 });
 

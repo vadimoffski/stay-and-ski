@@ -1,5 +1,5 @@
 @import 'reset';
-@import url(https://fonts.googleapis.com/css?family=Mulish:200,300,regular,500,600,700,800,900,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+@import url(https://fonts.googleapis.com/css?family=Mulish:200,300,regular,500,600,700,800,900);
 @import url(https://fonts.googleapis.com/css?family=Catamaran:100,200,300,regular,500,600,700,800,900);
 
 $mulish: 'Mulish';
@@ -25,66 +25,91 @@ $media_queries : (
         @content;
     }
 }
-
 @mixin columns($n) {
     flex: 0 0 bootstrap($n);
     max-width: bootstrap($n);
-    padding: 0 15px;
 }
-
 @function bootstrap($n){
     @return $n*100%/12;
 }
-*{
-    box-sizing: border-box;
+body{
+    height: 100%;
+    font-family: $mulish;
+    font-size: 14px;
+    color: #565656;
 }
-.container{
-    width: 100%;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin: 0 auto;
-    @include for_breakpoint(tablet){
-            max-width: 720px;
-    }
-    @include for_breakpoint(laptop){
-            max-width: 960px;
-    }
-}
-.row{
+.wrapper{
+    min-height: 100%;
+    overflow: hidden;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 0 -15px;
+    flex-direction: column;
 }
-
+._container{
+    max-width: 1024px;
+    padding: 0 15px;
+    margin: 0px auto;
+    box-sizing: content-box;
+}
+// ._ibg{
+//     position: relative;
+// }
+// .ibg img{
+//     position: absolute;
+//     width: 100%;
+//     height: 100%;
+//     top: 0;
+//     left: 0;
+//     object-fit: cover;
+// }
+// ________________________________________HEADER________________________________________
 .header{
     position: absolute;
+    width: 100%;
     top: 0;
     left: 0;
-    width: 100%;
     z-index: 100;
-}
-.x-hidden{
-    overflow: hidden;
-}
-
-.logo{
-    @include columns(4);
-}
-
-.nav{
-    @include columns(8);
+    &__container{
     display: flex;
-    justify-content: space-between;
+    min-height: 134px;
     align-items: center;
+    }
+    &__logo img{
+        max-width: 100%;
+    }
+    &__menu{
+        margin: 0 0 0 130px;
+        @include for_breakpoint('mobile'){
+            margin: 0 0 0 10px;
+        }
+        @include for_breakpoint('tablet'){
+            margin: 0 0 0 10px;
+        }
+        @include for_breakpoint('laptop'){
+            margin: 0 0 0 100px;
+        }
+        @include for_breakpoint('desktop'){
+            margin: 0 0 0 160px;
+        }
+    }
+}
+.menu{
+    padding: 5px 0;
+    &__list{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__item{
+        &:not(:last-child){
+            margin: 0 20px 0 0;
+        }
+    }
     &__link{
-        text-decoration: none;
-        color: white;
-        font-family: $mulish;
-        font-weight: bold;
-        padding: 10px 0 0 0;
-        border-radius: 5px 5px 0px 0px;
         position: relative;
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        line-height: calc(35/14*100%);
+        padding: 10px 0 0 0;
         &::before, &::after{
 			content: '';
 			position: absolute;
@@ -102,7 +127,6 @@ $media_queries : (
         &::before, &::after{
             transform: scaleY(0);
             transform-origin: bottom;
-
         }
         &:hover::before, &:hover::after{
             transform: scaleY(1);
@@ -110,28 +134,102 @@ $media_queries : (
         }
     }
 }
-
-.paralax{
+// ________________________________________PAGE______________________________________
+.page{
+    flex: 1 1 auto;
+}
+.page__main-block{}
+.main-block {
     position: relative;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-size: contain;
-    overflow-y: hidden;
+    &__body {
+        padding: 200px 0 50px 0;
+        position: relative;
+        z-index: 2;
+        max-width: 500px;
+        text-align:center;
+        &>*:not(:last-child){
+            margin: 0 0 35px 0;
+        }
+        @include for_breakpoint('mobile'){
+            &>*:not(:last-child){
+                margin: 0 0 10px 0;
+            }
+        }
+        @include for_breakpoint('tablet'){
+            padding: 300px 0 100px 10px;
+            text-align: left;
+        }
+        @include for_breakpoint('laptop'){
+            padding: 350px 0 150px 20px;  
+        }
+        @include for_breakpoint('desktop'){
+            padding: 450px 0 200px 0; 
+        }
+    }
+    &__text {
+        font-size: 24px;
+        color: #fff;
+        line-height: calc(36/24*100%);
+        text-align: left;
+        @include for_breakpoint('mobile'){
+            text-align: center;
+            font-size: 15px;
+            line-height: calc(20/15*100%);
+        }
+    }
+    &__button {
+        background-color: rgb(255, 105, 15);
+        border-radius: 10px;
+        cursor: pointer;
+        color: white;
+        padding: 10px 5px;
+        font-size: 20px;
+        text-transform: uppercase;
+        text-decoration: none;
+        @include for_breakpoint('mobile'){
+            font-size: 10px;
+        }
+        &:hover{
+            background-color: transparent;
+            border: 2px solid rgb(255, 105, 15);
+        }
+    }
+    &__buttons {
+        
+    }
+    &__container {}
+    &__paralax {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow-y: hidden;
+    }
+}
+// ________________________________________PARALAX-IMG_________________________________
+.paralax{
     &__h2{
         font-family: $catamaran;
         position: absolute;
-        top: 40px;
+        top: 50px;
         font-size: 20px;
         font-weight: 900;
         text-transform: uppercase;
         text-align: center;
         color: rgb(102, 172, 206);
+        @include for_breakpoint('mobile'){
+            top: 100px;
+        }
     }
     &__big{
         font-size: 125px;
+        @include for_breakpoint('mobile'){
+            font-size: 50px;
+        }
     }
     &__img-bg{
         position: absolute;
@@ -141,36 +239,58 @@ $media_queries : (
         height: 100%;
         pointer-events: none;
         object-fit: cover;
-        border-radius: 10px;
     }
     &__img-mountains{
         position: absolute;
-        bottom: -150px;
+        bottom: -20px;
         left: 0;
         width: 100%;
         height: 100%;
         pointer-events: none;
         object-fit: contain;
+        object-position: bottom;
+        @include for_breakpoint('tablet'){
+            object-position: bottom;
+        }
+        @include for_breakpoint('laptop'){
+            object-position: bottom;
+        }
+        @include for_breakpoint('desktop'){
+            object-position: bottom;
+        }
     }
     &__img-heel{
         position: absolute;
-        bottom: -250px;
+        bottom: 0;
         left: 0;
         width: 100%;
         height: 100%;
         pointer-events: none;
         object-fit: contain;
+        object-position: bottom;
     }
     &__img-boarder{
         position: absolute;
         bottom: -50px;
-        right: 0px;
-        width: 50%;
-        height: 50%;
+        right: 0;
+        max-width: 50%;
         pointer-events: none;
         object-fit: contain;
+        @include for_breakpoint('mobile'){
+            bottom: -20px;
+        }
     }
 }
+
+// ________________________________________FOOTER______________________________________
+.footer{
+
+}
+
+
+
+
+
 
 .online-booking{
     @include columns(5);
@@ -314,6 +434,7 @@ $media_queries : (
 }
 
 .school-wrapper{
+    display: none;
     background: url(./img/block5/bg.png) no-repeat 100% 50%;
     background-size: cover;
     padding: 100px 20px;
@@ -442,13 +563,3 @@ $media_queries : (
         height: 30px;
     }
 }
-
-
-
-
-
-
-
-
-
-
