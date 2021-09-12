@@ -15,5 +15,3 @@ window.addEventListener('scroll', function(){
     boarder.style.right =value * 0.9 +'px';
 
 });
-
-console.log(title);
