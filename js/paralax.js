@@ -11,7 +11,7 @@ window.addEventListener('scroll', function(){
     
     title.style.top = 5 + value * 0.2 +'%';
     mountains.style.top = value * 0.3 +'%';
-    header.style.top = value * -0.5 +'px';
+    // header.style.top = value * -0.5 +'px';
     boarder.style.right =value * 0.9 +'px';
 
 });
