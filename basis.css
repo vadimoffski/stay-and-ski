@@ -328,6 +328,31 @@ body {
           transform-origin: bottom;
 }
 
+.back-to-top {
+  position: fixed;
+  bottom: 80px;
+  right: 40px;
+  z-index: 9999;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 30px;
+  line-height: calc(40/30*100%);
+  background: #ff690f;
+  border-radius: 50%;
+  color: black;
+  cursor: pointer;
+  display: none;
+}
+
+.back-to-top:hover {
+  background: #e9ebec;
+}
+
+.back-to-top-show {
+  display: block;
+}
+
 .page {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;

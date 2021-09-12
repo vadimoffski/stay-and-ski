@@ -235,6 +235,32 @@ body{
         }
     }
 }
+
+// _____________________________________BACK-TO-TOP__________________________________
+.back-to-top {
+    position: fixed;
+    bottom: 80px;
+    right: 40px;
+    z-index: 9999;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 30px;
+    line-height: calc(40/30*100%);
+    background: rgb(255, 105, 15);
+    border-radius: 50%;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    display: none;
+  }
+  
+  .back-to-top:hover {
+    background: #e9ebec;
+  }
+  
+  .back-to-top-show {
+    display: block;
+  }
 // ________________________________________PAGE______________________________________
 .page{
     flex: 1 1 auto;
