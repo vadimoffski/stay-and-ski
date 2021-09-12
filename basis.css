@@ -217,6 +217,29 @@ body {
           transform: scale(1) translate(0px, -50%);
 }
 
+.menu-icon span {
+  top: 50%;
+  -webkit-transform: scale(1) translate(0px, -50%);
+          transform: scale(1) translate(0px, -50%);
+}
+
+.menu-icon._active span {
+  -webkit-transform: scale(0) translate(0px, -50%);
+          transform: scale(0) translate(0px, -50%);
+}
+
+.menu-icon._active::before {
+  top: 50%;
+  -webkit-transform: rotate(-45deg) translate(0px, -50%);
+          transform: rotate(-45deg) translate(0px, -50%);
+}
+
+.menu-icon._active::after {
+  bottom: 50%;
+  -webkit-transform: rotate(45deg) translate(0px, 50%);
+          transform: rotate(45deg) translate(0px, 50%);
+}
+
 .menu {
   padding: 5px 0;
 }
